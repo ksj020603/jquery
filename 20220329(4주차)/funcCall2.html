@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>매개변수 연습</title>
+	<script type="text/javascript">
+		var a = 5;
+		function outerfunction() {
+			var b = 10;
+			function innerfunction(){
+				var c = 20;
+				document.write("<br>a= " + a);
+				document.write(" a0= " + a + ", b = " + b + ", c = " + c);
+			}
+			innerfunction();
+			document.write("<br>a= " + a);
+			document.write(" a1= " + a + ", b = " + b);
+		}
+		outerfunction();
+		document.write("<br>a= " + a);
+		document.write(" a2= " + a);
+	</script>
+</head>
+<body>
+
+</body>
+</html>
