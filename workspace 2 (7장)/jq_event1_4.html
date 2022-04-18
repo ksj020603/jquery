@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title> 이벤트 </title>  
+<script src="js/jquery.js"></script>
+<script>
+$(function( ) {
+	$(document).ready(function(){ //외부 리소스, 이미지와는 상관없이 브라우저가  DOM(document Object Model) 을 생성한 직후에 실행 - https://rgba22202551.tistory.com/8
+		var h1 = $(".img1").height();
+		console.log("ready :", h1);
+	});
+
+	$(window).load(function(){ //HTML의 로딩이 끝난 후 실행 되고, 화면에 필요한 모든 요소 (image, css, javascript 등)들이 웹 브라우저 메모리에 모두 올려진 다음에 실행 - https://rgba22202551.tistory.com/8
+		var h2 = $(".img1").height();
+		console.log("load :", h2);
+	});   
+});
+</script>
+</head>
+<body>
+	<p>
+		<img src="http://place-hold.it/300X300" class="img1">
+	</p>
+</body>
+</html>

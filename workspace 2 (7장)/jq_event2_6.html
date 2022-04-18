@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title> 이벤트 </title>  
+<script src="js/jquery.js"></script>
+<script>
+$(function(){
+		$(".btn_1.on").on("mouseover focus", function() { //노드 영역에서 마우스를 올려놓았을 때 발생 (내부노드까지 이벤트를 감지)
+			alert("HELLO!");
+		});
+		$(".btn_1").addClass("on");
+
+		$(document).on("mouseover focus",".btn_2.on", function() { //노드 영역에서 마우스를 올려놓았을 때 발생 (내부노드까지 이벤트를 감지)
+				alert("WELCOME!");
+		});
+		$(".btn_2").addClass("on"); //선택한 요소에 클래스 값을 추가 - https://www.codingfactory.net/10195
+});
+</script>
+</head>
+<body>
+	<div id="wrap">
+		<p><button class="btn_1">버튼1</button></p>
+		<p><button class="btn_2">버튼2</button></p>
+	</div>
+</body>
+</html>

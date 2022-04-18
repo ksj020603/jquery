@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title> 이벤트 </title>  
+<script src="js/jquery.js"></script>
+<script>
+$(function(){
+	$(".btn_wrap").delegate(".btn_1.on", //루트 요소의 특정 집합을 기반으로, 지금 또는 나중에, 선택과 일치하는 모든 요소에 대해 하나 이상의 이벤트 처리기를 묶어줍니다. - https://findfun.tistory.com/274
+	"mouseover focus", function() { //노드 영역에서 마우스를 올려놓았을 때 발생 (내부노드까지 이벤트를 감지) - https://m.blog.naver.com/PostView.naver?isHttpsRedirect=true&blogId=likingyo&logNo=221172180338
+		alert("HELLO!");
+	});
+	$(".btn_1").addClass("on"); //선택한 요소에 클래스 값을 추가 https://www.codingfactory.net/10195
+
+	$(document).one("mouseover focus", //노드 영역에서 마우스를 올려놓았을 때 발생 (내부노드까지 이벤트를 감지) - https://m.blog.naver.com/PostView.naver?isHttpsRedirect=true&blogId=likingyo&logNo=221172180338
+	".btn_2.on", function() {
+		alert("WELCOME!");
+	});
+	$(".btn_2").addClass("on"); //선택한 요소에 클래스 값을 추가 https://www.codingfactory.net/10195
+});
+</script>
+</head>
+<body>
+<div id="wrap">
+	<p class="btn_wrap">
+		<button class="btn_1">버튼1</button>
+	</p>
+	<p><button class="btn_2">버튼2</button></p>
+</div>
+</body>
+</html>
